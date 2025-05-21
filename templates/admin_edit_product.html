@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>{% if product %}Edit Product{% else %}New Product{% endif %}</h2>
+
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" value="{{ product[1] if product else '' }}"><br><br>
+
+    <label>Description:</label><br>
+    <textarea name="description" rows="5" cols="60">{{ product[2] if product else '' }}</textarea><br><br>
+
+    <label>Price (USD):</label><br>
+    <input type="text" name="price_usd" value="{{ product[3] if product else '0.00' }}"><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<p><a href="/admin/products">Back to Products</a></p>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- templates/index.html -->
+{% extends "layout.html" %}
+{% block content %}
+<h2>Welcome to {{ store_title }}</h2>
+<div class="product-list">
+  {% for p in products %}
+  <div class="product-item">
+    <h3>{{ p[1] }}</h3>
+    <p>{{ p[2] }}</p>
+    {% if p[3] %}
+    <img src="/{{ p[3] }}" alt="Product Image" class="product-img">
+    {% endif %}
+    <p>Price: ${{ p[4] }}</p>
+    <p><a href="/product/{{ p[0] }}">View Details</a></p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

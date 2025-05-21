@@ -1,0 +1,8 @@
+/* static/css/theme_red.css */
+body {
+    background: #ffe0e0;
+    color: #600;
+}
+header, footer {
+    background: #f0a0a0;
+}

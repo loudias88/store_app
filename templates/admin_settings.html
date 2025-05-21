@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Store Settings</h2>
+
+<form method="POST">
+    <label>Store Title:</label><br>
+    <input type="text" name="store_title" value="{{ store_title }}"><br><br>
+
+    <label>Color Theme:</label><br>
+    <select name="color_theme">
+        <option value="theme_default" {% if color_theme == 'theme_default' %}selected{% endif %}>Default</option>
+        <option value="theme_dark" {% if color_theme == 'theme_dark' %}selected{% endif %}>Dark</option>
+        <option value="theme_blue" {% if color_theme == 'theme_blue' %}selected{% endif %}>Blue</option>
+        <option value="theme_red" {% if color_theme == 'theme_red' %}selected{% endif %}>Red</option>
+    </select>
+    <br><br>
+
+    <!-- Potential future file upload for logo (multipart form) -->
+
+    <label>PGP Key:</label><br>
+    <textarea name="pgp_key" rows="5" cols="60">{{ pgp_key }}</textarea><br><br>
+
+    <label>BTC Address:</label><br>
+    <input type="text" name="btc_address" value="{{ btc_address }}"><br><br>
+
+    <label>XMR Address:</label><br>
+    <input type="text" name="xmr_address" value="{{ xmr_address }}"><br><br>
+
+    <label>Contact Email:</label><br>
+    <input type="email" name="contact_email" value="{{ contact_email }}"><br><br>
+
+    <label>Onion URL (or domain):</label><br>
+    <input type="text" name="onion_url" value="{{ onion_url }}"><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<p><a href="/admin">Back to Admin</a></p>
+{% endblock %}

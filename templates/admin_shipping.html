@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Shipping Options</h2>
+
+<table>
+  <tr><th>ID</th><th>Country</th><th>Region</th><th>Price (USD)</th><th>Actions</th></tr>
+  {% for s in shipping_list %}
+  <tr>
+    <td>{{ s[0] }}</td>
+    <td>{{ s[1] }}</td>
+    <td>{{ s[2] }}</td>
+    <td>{{ s[3] }}</td>
+    <td><a href="/admin/shipping/delete/{{ s[0] }}">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3>Add New Shipping Option</h3>
+<form method="POST">
+    <label>Country:</label><br>
+    <input type="text" name="country"><br><br>
+
+    <label>Region/State:</label><br>
+    <input type="text" name="region"><br><br>
+
+    <label>Price (USD):</label><br>
+    <input type="text" name="price_usd" value="0.00"><br><br>
+
+    <button type="submit">Add Shipping</button>
+</form>
+
+<p><a href="/admin">Back to Admin</a></p>
+{% endblock %}

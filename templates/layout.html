@@ -1,0 +1,32 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ store_title if store_title else "My Store" }}</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/{{ color_theme }}.css">
+</head>
+<body>
+    <header>
+        {% if logo_path %}
+            <img src="/{{ logo_path }}" alt="Logo" class="logo">
+        {% else %}
+            <h1>{{ store_title if store_title else "My Store" }}</h1>
+        {% endif %}
+        <nav>
+            <a href="/">Home</a>
+            <a href="/admin">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ store_title if store_title else "My Store" }} 
+           {% if onion_url %} - <a href="http://{{ onion_url }}">{{ onion_url }}</a>{% endif %}</p>
+    </footer>
+</body>
+</html>

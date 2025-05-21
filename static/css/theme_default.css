@@ -1,0 +1,8 @@
+/* static/css/theme_default.css */
+body {
+    background: #fafafa;
+    color: #333;
+}
+header, footer {
+    background: #ccc;
+}

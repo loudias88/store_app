@@ -1,0 +1,8 @@
+/* static/css/theme_dark.css */
+body {
+    background: #333;
+    color: #fff;
+}
+header, footer {
+    background: #444;
+}

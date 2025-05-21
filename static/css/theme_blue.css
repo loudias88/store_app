@@ -1,0 +1,8 @@
+/* static/css/theme_blue.css */
+body {
+    background: #e0f0ff;
+    color: #000;
+}
+header, footer {
+    background: #a0c0e0;
+}

@@ -1,0 +1,22 @@
+<!-- templates/checkout.html -->
+{% extends "layout.html" %}
+{% block content %}
+<h2>Checkout</h2>
+<p>Product: {{ product[1] }}</p>
+<p>Shipping: {{ shipping[1] }} - {{ shipping[2] }}</p>
+<p>Quantity: {{ quantity }}</p>
+<p>Subtotal: ${{ product[2] * quantity|float }}</p>
+<p>Shipping Cost: ${{ shipping[3] }}</p>
+<h3>Total: ${{ total_usd }}</h3>
+
+<hr>
+<h4>Payment in Crypto</h4>
+<p>BTC Address: {{ btc_address }} (Approx. {{ btc_amount|round(6) }} BTC)</p>
+<p>XMR Address: {{ xmr_address }} (Approx. {{ xmr_amount|round(6) }} XMR)</p>
+
+<hr>
+<h4>PGP Key for Encrypted Communication</h4>
+<pre>{{ pgp_key }}</pre>
+<p>Please encrypt your personal details with the above PGP key before sending.</p>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!-- templates/product_detail.html -->
+{% extends "layout.html" %}
+{% block content %}
+<h2>{{ product[1] }}</h2>
+{% if product[3] %}
+<img src="/{{ product[3] }}" alt="Product Image" class="product-img">
+{% endif %}
+<p>{{ product[2] }}</p>
+<p>Price: ${{ product[4] }}</p>
+
+<form action="/checkout" method="POST">
+    <input type="hidden" name="product_id" value="{{ product[0] }}">
+    <label>Quantity:
+        <input type="number" name="quantity" value="1" min="1">
+    </label>
+    <br><br>
+
+    <label>Shipping Options:</label><br>
+    <select name="shipping_id">
+      {% for s in shipping_options %}
+      <option value="{{ s[0] }}">{{ s[1] }} - {{ s[2] }} - ${{ s[3] }}</option>
+      {% endfor %}
+    </select>
+    <br><br>
+
+    <button type="submit">Buy Now</button>
+</form>
+{% endblock %}

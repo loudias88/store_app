@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Products</h2>
+
+<table>
+  <tr><th>ID</th><th>Name</th><th>Price (USD)</th><th>Actions</th></tr>
+  {% for p in products %}
+  <tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>
+      <a href="/admin/product/edit/{{ p[0] }}">Edit</a> |
+      <a href="/admin/product/delete/{{ p[0] }}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<p><a href="/admin/product/edit">Add New Product</a></p>
+<p><a href="/admin">Back to Admin</a></p>
+{% endblock %}

@@ -1,0 +1,68 @@
+/* static/css/base.css */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #ffffff;
+    color: #000000;
+}
+
+header, footer {
+    padding: 10px;
+    background: #eee;
+}
+
+header nav a {
+    margin-right: 10px;
+}
+
+.logo {
+    max-height: 50px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 10px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.product-img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.error {
+    color: red;
+}
+
+.login-container {
+    width: 300px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.login-container form label {
+    display: block;
+    margin: 5px 0;
+}
